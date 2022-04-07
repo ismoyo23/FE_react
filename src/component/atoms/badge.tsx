@@ -1,3 +1,4 @@
+import React from "react";
 interface BadgeProps {
   type?: "primary" | "secondary" | "danger" | "info";
   label: any;

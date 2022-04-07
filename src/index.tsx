@@ -3,19 +3,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore, applyMiddleware, Store } from "redux";
 import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-import reducer from "./redux/reducer/TaskReducers";
-import "font-awesome/css/font-awesome.min.css";
 
-const store: Store<TaskState, TaskAction> & {
-  dispatch: DispatchType;
-} = createStore(reducer, applyMiddleware(thunk));
+import "font-awesome/css/font-awesome.min.css";
+import storage from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+const { store, persistor } = storage; // store.store && storage.persisto
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PersistGate persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>,
   document.getElementById("root")
 );

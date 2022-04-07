@@ -1,3 +1,4 @@
+import React from "react";
 interface ButtonProps {
   type?: "small-primary" | "medium-primary" | "large-primary" | "custom";
   label: any;

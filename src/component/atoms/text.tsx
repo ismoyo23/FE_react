@@ -1,3 +1,4 @@
+import React from "react";
 interface TextProps {
   type: "small" | "medium" | "large";
   label: string;

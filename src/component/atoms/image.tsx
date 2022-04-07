@@ -1,3 +1,4 @@
+import React from "react";
 interface ImageProps {
   type: "small" | "medium" | "large" | "custom";
   name: string;
